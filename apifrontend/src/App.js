@@ -1,57 +1,80 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+import logo from './Img/biohazard-transparent-background-6-transparent.png';
 import './App.css';
 import './app.sass';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <section class="hero is-dark">
+      <section class="hero is-dark is-fullheight">
+  {/* <!-- Hero head: will stick at the top --> */}
+  <div class="hero-head">
+    <header class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src={logo}  alt="Logo"></img>
+            Corona Virus
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenuHeroC">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroC" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active">
+              Home
+            </a>
+            <a class="navbar-item">
+              Examples
+            </a>
+            <a class="navbar-item">
+              Documentation
+            </a>
+            <span class="navbar-item">
+              <a class="button is-dark is-inverted">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Download</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  {/* <!-- Hero content: will be in the middle --> */}
   <div class="hero-body">
-    <div class="container">
+    <div class="container has-text-centered">
       <h1 class="title">
-        Corona Virus Api  
+        Title
       </h1>
       <h2 class="subtitle">
-        Global Cases 
+        Subtitle
       </h2>
     </div>
   </div>
-</section>
-        <h1 className="title">Bulma</h1>
 
-        <p className="subtitle">
-          Modern CSS framework based on{' '}
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">
-            Flexbox
-          </a>
-        </p>
-
-        <div className="field">
-          <div className="control">
-            <input className="input" type="text" placeholder="Input" />
-          </div>
-        </div>
-
-        <div className="field">
-          <p className="control">
-            <span className="select">
-              <select>
-              <option>Country</option>
-              <option>Date</option>
-              <option>Geographic Id</option>
-              <option>Konichiwa!</option>
-              </select>
-            </span>
-          </p>
-        </div>
-
-        <div className="buttons">
-          <a className="button is-primary">Primary</a>
-          <a className="button is-link">Link</a>
-        </div>
+  {/* <!-- Hero footer: will stick at the bottom --> */}
+  <div class="hero-foot">
+    <nav class="tabs is-boxed is-fullwidth">
+      <div class="container">
+        <ul>
+          <li class="is-active"><a>Overview</a></li>
+          <li><a>Modifiers</a></li>
+          <li><a>Grid</a></li>
+          <li><a>Elements</a></li>
+          <li><a>Components</a></li>
+          <li><a>Layout</a></li>
+        </ul>
       </div>
+    </nav>
+  </div>
+</section>
     );
   }
 }
