@@ -2,11 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
-// const cors = require("cors");
+import {
+  BrowserRouter as Router
+  // Switch,
+  // Route,
+  // Link
+} from "react-router-dom";
 
-ReactDOM.render((
-    <BrowserRouter>
-      <Route path="/" component={App} />
-    </BrowserRouter>
-  ), document.getElementById('root'));
+ReactDOM.render(
+  <Router>
+      <App />
+  </Router>,
+  document.getElementById('root')
+);
