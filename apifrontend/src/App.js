@@ -3,6 +3,14 @@ import logo from './Img/biohazard-transparent-background-6-transparent.png';
 import './App.css';
 import './app.sass';
 
+fetch('http://localhost:8181/')
+.then((response) => {
+  return response.json();
+})
+.then((data) => {
+  console.log(data);
+});
+
 class App extends Component {
   render() {
     return (
