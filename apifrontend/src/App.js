@@ -8,13 +8,13 @@ import Chart from "./component/composedChart"
 
 
 
-fetch('http://localhost:8181/')
-.then((response) => {
-  return response.json();
-})
-.then((data) => {
-  console.log(data);
-});
+// fetch('http://localhost:8181/')
+// .then((response) => {
+//   return response.json();
+// })
+// .then((data) => {
+//   console.log(data);
+// });
 
 class App extends Component {
   render() {
@@ -52,6 +52,7 @@ class App extends Component {
                   <i class="fab fa-github"></i>
                 </span>
                 <span>Download</span>
+                <Link to="https://github.com/AMontilla8/Api-project-Front-End" />
               </a>
             </span>
           </div>
@@ -64,16 +65,16 @@ class App extends Component {
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title">
-       {Chart}
       </h1>
       <h2 class="subtitle">
         Subtitle
+       <Chart />
       </h2>
     </div>
   </div>
 
   {/* <!-- Hero footer: will stick at the bottom --> */}
-  <div class="hero-foot">
+  {/* <div class="hero-foot">
     <nav class="tabs is-boxed is-fullwidth">
       <div class="container">
         <ul>
@@ -86,7 +87,7 @@ class App extends Component {
         </ul>
       </div>
     </nav>
-  </div>
+  </div> */}
 </section>
     );
   }
