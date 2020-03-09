@@ -8,15 +8,23 @@ import Chart from "./component/composedChart"
 
 
 
-// fetch('http://localhost:8181/')
-// .then((response) => {
-//   return response.json();
-// })
-// .then((data) => {
-//   console.log(data);
-// });
-
 class App extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          data: null
+      }
+  }
+  componentDidMount () {
+     if (!this.state.data) {
+         fetch('http://localhost:8181/')
+         .then(res => res.json())
+         .then(res => {
+             this.setState({ data: res})
+             console.log(res)
+         })
+     }
+  }
   render() {
     return (
       <section class="hero is-dark is-fullheight">
@@ -40,9 +48,9 @@ class App extends Component {
             <a class="navbar-item is-active">
               Home
             </a>
-            <a class="navbar-item">
+            {/* <a class="navbar-item">
               Examples
-            </a>
+            </a> */}
             <a class="navbar-item">
               Documentation
             </a>
@@ -52,7 +60,7 @@ class App extends Component {
                   <i class="fab fa-github"></i>
                 </span>
                 <span>Download</span>
-                <Link to="https://github.com/AMontilla8/Api-project-Front-End" />
+                {/* <Link to="https://github.com/AMontilla8/Api-project-Front-End" /> */}
               </a>
             </span>
           </div>
@@ -67,7 +75,6 @@ class App extends Component {
       <h1 class="title">
       </h1>
       <h2 class="subtitle">
-        Subtitle
        <Chart />
       </h2>
     </div>

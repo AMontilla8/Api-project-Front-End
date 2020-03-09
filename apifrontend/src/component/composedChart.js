@@ -4,14 +4,15 @@ import { ResponsiveContainer, ComposedChart, Line, Bar, Area, XAxis,
     LineChart } from 'recharts';
 
 const data = [
-  { name: 'trial 1', uv: 5990, pv: 9800, amt: 91400 },
-  { name: 'trial 2', uv: 9868, pv: 9967, amt: 91506 },
-  { name: 'trial 3', uv: 7397, pv: 1098, amt: 989 },
-  { name: 'trial 4', uv: 9480, pv: 1200, amt: 1228 },
-  { name: 'trial 5', uv: 8520, pv: 1108, amt: 1100 },
-  { name: 'trial 6', uv: 6400, pv: 680, amt: 1700 },
+  { name: 'Date', Recovered: 5990, Deaths: 9800, ConfirmCases: 11400 },
+  { name: 'Date', Recovered: 9868, Deaths: 9967, ConfirmCases: 11506 },
+  { name: 'Date', Recovered: 7397, Deaths: 1098, ConfirmCases: 1989 },
+  { name: 'Date', Recovered: 9480, Deaths: 1200, ConfirmCases: 11228 },
+  { name: 'Date', Recovered: 8520, Deaths: 1108, ConfirmCases: 11100 },
+  { name: 'Date', Recovered: 6400, Deaths: 680, ConfirmCases: 11700 },
 ];
 
+// 
 
 export default class Graph extends Component {
   static display = 'ComposedChart'
@@ -28,14 +29,14 @@ export default class Graph extends Component {
                   <Legend layout="vertical" align="right" verticalAlign="middle"/>
                   <CartesianGrid stroke="#000000" />
                   <Tooltip />
-                  <Area type="monotone" dataKey='amt' fill="#008b8b" stroke="red" />
-                  <Line type="monotone" dataKey="uv" stroke="#00ffff" />
-                  <Bar dataKey="pv" barSize={20} fill="#413ea0" />
-                  <ReferenceLine x="trial 2" stroke="red" label="Max PV PAGE" />
-                  <ReferenceDot x="trial 2" y={1300} stroke="red" />
+                  <Area type="monotone" dataKey='ConfirmCases' fill="#008b8b" stroke="red" />
+                  <Line type="monotone" dataKey="Recovered" stroke="#00ffff" />
+                  <Bar dataKey="Deaths" barSize={20} fill="#413ea0" />
+                  <ReferenceLine x="Date" stroke="red" label="Max PV PAGE" />
+                  <ReferenceDot x="Date" y={1300} stroke="red" />
                   <Brush>
                     <LineChart>
-                      <Line dataKey="uv" stroke="#6E00AD" dot={false} />
+                      <Line dataKey="Recovered" stroke="#6E00AD" dot={false} />
                     </LineChart>
                   </Brush>
                 </ComposedChart>
